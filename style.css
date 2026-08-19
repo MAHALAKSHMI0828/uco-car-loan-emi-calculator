@@ -1,0 +1,776 @@
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+
+    box-sizing: border-box;
+
+}
+
+
+body {
+
+    margin: 0;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #eef3f8;
+
+    color: #1c2935;
+
+}
+
+
+.container {
+
+    width: 100%;
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 20px;
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header {
+
+    background:
+        linear-gradient(
+            135deg,
+            #063b70,
+            #0877b9
+        );
+
+    color: white;
+
+    text-align: center;
+
+    padding: 30px 20px;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0,0,0,0.15);
+
+}
+
+
+.bank-name {
+
+    font-size: 36px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+}
+
+
+.calculator-title {
+
+    font-size: 25px;
+
+    font-weight: bold;
+
+    margin-top: 8px;
+
+}
+
+
+.subtitle {
+
+    font-size: 16px;
+
+    margin-top: 6px;
+
+}
+
+
+/* =========================================================
+   NOTICE
+========================================================= */
+
+.notice {
+
+    margin-top: 18px;
+
+    padding: 16px;
+
+    background: #fff5d6;
+
+    border-left:
+        5px solid #e0a800;
+
+    border-radius: 10px;
+
+    line-height: 1.6;
+
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.card {
+
+    background: white;
+
+    margin-top: 18px;
+
+    padding: 25px;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 5px 20px
+        rgba(0,0,0,0.08);
+
+}
+
+
+.card h2 {
+
+    color: #063b70;
+
+    margin-top: 0;
+
+    padding-bottom: 10px;
+
+    border-bottom:
+        2px solid #e5edf4;
+
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.form-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 20px;
+
+}
+
+
+.form-group {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.form-group label {
+
+    font-weight: bold;
+
+    margin-bottom: 6px;
+
+}
+
+
+input,
+select {
+
+    width: 100%;
+
+    padding: 13px;
+
+    font-size: 16px;
+
+    border:
+        1px solid #c8d3dd;
+
+    border-radius: 8px;
+
+    background: white;
+
+}
+
+
+input:focus,
+select:focus {
+
+    outline: none;
+
+    border-color: #0877b9;
+
+    box-shadow:
+        0 0 0 2px
+        rgba(8,119,185,0.15);
+
+}
+
+
+.form-group small {
+
+    color: #6b7885;
+
+    margin-top: 5px;
+
+    line-height: 1.4;
+
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.button-container {
+
+    margin-top: 25px;
+
+    display: flex;
+
+    gap: 12px;
+
+}
+
+
+button {
+
+    border: none;
+
+    padding: 15px 20px;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+}
+
+
+.calculate-btn {
+
+    background: #0877b9;
+
+    color: white;
+
+    flex: 1;
+
+}
+
+
+.calculate-btn:hover {
+
+    background: #075e93;
+
+}
+
+
+.reset-btn {
+
+    background: #687786;
+
+    color: white;
+
+    width: 130px;
+
+}
+
+
+.reset-btn:hover {
+
+    background: #4f5c68;
+
+}
+
+
+/* =========================================================
+   ELIGIBILITY STATUS
+========================================================= */
+
+.status {
+
+    padding: 16px;
+
+    border-radius: 10px;
+
+    margin-bottom: 20px;
+
+    line-height: 1.6;
+
+}
+
+
+.status-success {
+
+    background: #e5f7eb;
+
+    color: #176b35;
+
+    border-left:
+        5px solid #25a45a;
+
+}
+
+
+.status-error {
+
+    background: #fde8e8;
+
+    color: #a32222;
+
+    border-left:
+        5px solid #d32f2f;
+
+}
+
+
+/* =========================================================
+   80% LOAN BREAKDOWN
+========================================================= */
+
+.amount-breakdown {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        120px
+        1fr;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.amount-box {
+
+    padding: 22px;
+
+    border-radius: 12px;
+
+    text-align: center;
+
+}
+
+
+.amount-box span {
+
+    display: block;
+
+    font-size: 14px;
+
+    color: #667482;
+
+}
+
+
+.amount-box strong {
+
+    display: block;
+
+    margin-top: 8px;
+
+    font-size: 26px;
+
+}
+
+
+.amount-box.requested {
+
+    background: #f1f6fa;
+
+    border:
+        1px solid #d6e2ec;
+
+}
+
+
+.amount-box.requested strong {
+
+    color: #063b70;
+
+}
+
+
+.amount-box.eligible {
+
+    background: #e5f7eb;
+
+    border:
+        1px solid #b7dfc3;
+
+}
+
+
+.amount-box.eligible strong {
+
+    color: #176b35;
+
+}
+
+
+.percentage-arrow {
+
+    text-align: center;
+
+    color: #0877b9;
+
+    font-weight: bold;
+
+}
+
+
+.percentage-arrow span {
+
+    display: block;
+
+    font-size: 28px;
+
+}
+
+
+.percentage-arrow small {
+
+    font-size: 12px;
+
+}
+
+
+/* =========================================================
+   RESULT GRID
+========================================================= */
+
+.result-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+
+}
+
+
+.result-box {
+
+    background: #f1f6fa;
+
+    padding: 18px;
+
+    border-radius: 10px;
+
+}
+
+
+.result-box span {
+
+    display: block;
+
+    color: #657482;
+
+    font-size: 13px;
+
+}
+
+
+.result-box strong {
+
+    display: block;
+
+    margin-top: 8px;
+
+    color: #063b70;
+
+    font-size: 22px;
+
+}
+
+
+#resultDetails {
+
+    margin-top: 20px;
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.table-container {
+
+    width: 100%;
+
+    overflow-x: auto;
+
+}
+
+
+table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+}
+
+
+th {
+
+    background: #063b70;
+
+    color: white;
+
+    padding: 12px;
+
+    white-space: nowrap;
+
+}
+
+
+td {
+
+    padding: 10px;
+
+    border-bottom:
+        1px solid #dce3e9;
+
+    text-align: right;
+
+}
+
+
+th:first-child,
+td:first-child {
+
+    text-align: center;
+
+}
+
+
+/* =========================================================
+   RATE TABLE
+========================================================= */
+
+.rate-table td {
+
+    text-align: center;
+
+}
+
+
+.warning {
+
+    margin-top: 15px;
+
+    color: #9b5d00;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+}
+
+
+/* =========================================================
+   PRODUCT FEATURES
+========================================================= */
+
+.feature-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+
+}
+
+
+.feature-grid div {
+
+    background: #f1f6fa;
+
+    padding: 18px;
+
+    border-radius: 10px;
+
+}
+
+
+.feature-grid strong {
+
+    display: block;
+
+    color: #063b70;
+
+    margin-bottom: 8px;
+
+}
+
+
+.feature-grid span {
+
+    color: #566675;
+
+    line-height: 1.5;
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+
+    text-align: center;
+
+    padding: 28px 10px;
+
+    color: #596a78;
+
+}
+
+
+footer strong {
+
+    color: #063b70;
+
+    font-size: 19px;
+
+}
+
+
+footer p {
+
+    margin: 6px 0;
+
+}
+
+
+/* =========================================================
+   MOBILE RESPONSIVE
+========================================================= */
+
+@media (max-width: 750px) {
+
+
+    .container {
+
+        padding: 10px;
+
+    }
+
+
+    .header {
+
+        padding: 25px 15px;
+
+    }
+
+
+    .bank-name {
+
+        font-size: 28px;
+
+    }
+
+
+    .calculator-title {
+
+        font-size: 20px;
+
+    }
+
+
+    .subtitle {
+
+        font-size: 14px;
+
+    }
+
+
+    .form-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .result-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .amount-breakdown {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .percentage-arrow {
+
+        transform: rotate(0deg);
+
+    }
+
+
+    .feature-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .button-container {
+
+        flex-direction: column;
+
+    }
+
+
+    .calculate-btn,
+    .reset-btn {
+
+        width: 100%;
+
+    }
+
+
+    .card {
+
+        padding: 17px;
+
+    }
+
+
+}

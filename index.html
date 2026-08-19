@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>UCO Bank Car Loan EMI Calculator</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="header">
+
+        <div class="bank-name">
+            UCO BANK
+        </div>
+
+        <div class="calculator-title">
+            CAR LOAN EMI CALCULATOR
+        </div>
+
+        <div class="subtitle">
+            Eligibility & EMI Calculator
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         IMPORTANT NOTICE
+    ====================================================== -->
+
+    <div class="notice">
+
+        <strong>Important:</strong>
+
+        This calculator provides an indicative eligibility
+        and EMI calculation based on the product information
+        provided. Final loan eligibility, sanction, rate,
+        charges and other terms are subject to the Bank's
+        prevailing rules, appraisal and documentation.
+
+    </div>
+
+
+
+    <!-- =====================================================
+         CUSTOMER DETAILS
+    ====================================================== -->
+
+    <section class="card">
+
+        <h2>
+            Customer Details
+        </h2>
+
+
+        <div class="form-grid">
+
+
+            <!-- AGE -->
+
+            <div class="form-group">
+
+                <label for="age">
+                    Age
+                </label>
+
+                <input
+                    type="number"
+                    id="age"
+                    min="18"
+                    max="70"
+                    placeholder="Enter age"
+                >
+
+                <small>
+                    Eligible age: 18 to 70 years
+                </small>
+
+            </div>
+
+
+
+            <!-- CIBIL -->
+
+            <div class="form-group">
+
+                <label for="cibil">
+                    CIBIL Score
+                </label>
+
+                <input
+                    type="number"
+                    id="cibil"
+                    min="0"
+                    max="900"
+                    placeholder="Enter CIBIL score"
+                >
+
+                <small>
+                    Enter customer's CIBIL score
+                </small>
+
+            </div>
+
+
+
+            <!-- EMPLOYMENT CATEGORY -->
+
+            <div class="form-group">
+
+                <label for="employment">
+
+                    Employment Category
+
+                </label>
+
+
+                <select id="employment">
+
+                    <option value="">
+                        Select Category
+                    </option>
+
+                    <option value="govt">
+                        Government Employee
+                    </option>
+
+                    <option value="nongovt">
+                        Non-Government Employee
+                    </option>
+
+                    <option value="self">
+                        Self Employed
+                    </option>
+
+                    <option value="business">
+                        Business
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- EXPERIENCE -->
+
+            <div class="form-group">
+
+                <label for="experience">
+
+                    Confirmed Service / Experience
+
+                </label>
+
+
+                <select id="experience">
+
+                    <option value="">
+                        Select Employment Category First
+                    </option>
+
+                </select>
+
+
+                <small id="experienceHelp">
+
+                    Select employment category first
+
+                </small>
+
+            </div>
+
+
+
+            <!-- MONTHLY INCOME -->
+
+            <div class="form-group">
+
+                <label for="income">
+
+                    Monthly Income (₹)
+
+                </label>
+
+
+                <input
+                    type="number"
+                    id="income"
+                    min="0"
+                    step="100"
+                    placeholder="Enter monthly income"
+                >
+
+
+                <small>
+
+                    Minimum monthly income:
+                    ₹20,000 for salaried categories
+
+                </small>
+
+            </div>
+
+
+
+            <!-- ITR -->
+
+            <div
+                class="form-group"
+                id="itrGroup"
+                style="display:none;"
+            >
+
+                <label for="itr">
+
+                    ITR / Business Experience
+
+                </label>
+
+
+                <select id="itr">
+
+                    <option value="">
+
+                        Select ITR Experience
+
+                    </option>
+
+                    <option value="24">
+
+                        2 Years
+
+                    </option>
+
+                </select>
+
+
+                <small>
+
+                    Minimum 2 years as shown
+                    in the supplied product details.
+
+                </small>
+
+            </div>
+
+
+
+            <!-- REQUIRED LOAN AMOUNT -->
+
+            <div class="form-group">
+
+                <label for="loanAmount">
+
+                    Required Loan Amount (₹)
+
+                </label>
+
+
+                <input
+                    type="number"
+                    id="loanAmount"
+                    min="1"
+                    step="1000"
+                    placeholder="Enter required loan amount"
+                >
+
+
+                <small>
+
+                    80% of the required amount
+                    will be considered for EMI calculation.
+
+                </small>
+
+            </div>
+
+
+
+            <!-- TENURE -->
+
+            <div class="form-group">
+
+                <label for="tenure">
+
+                    Loan Tenure
+
+                </label>
+
+
+                <select id="tenure">
+
+                    <option value="84">
+                        84 Months
+                    </option>
+
+                </select>
+
+
+                <small>
+
+                    Maximum tenure shown:
+                    84 months
+
+                </small>
+
+            </div>
+
+
+
+            <!-- VEHICLE TYPE -->
+
+            <div class="form-group">
+
+                <label for="vehicle">
+
+                    Vehicle Type
+
+                </label>
+
+
+                <select id="vehicle">
+
+                    <option value="normal">
+
+                        Normal / Other Vehicle
+
+                    </option>
+
+                    <option value="ev">
+
+                        Electric Vehicle
+
+                    </option>
+
+                </select>
+
+
+                <small>
+
+                    Electric Vehicle:
+                    0.10% concession
+
+                </small>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- BUTTONS -->
+
+        <div class="button-container">
+
+            <button
+                class="calculate-btn"
+                onclick="calculateEMI()"
+            >
+
+                CHECK ELIGIBILITY & CALCULATE EMI
+
+            </button>
+
+
+            <button
+                class="reset-btn"
+                onclick="resetCalculator()"
+            >
+
+                RESET
+
+            </button>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         RESULT
+    ====================================================== -->
+
+    <section
+        class="card"
+        id="resultCard"
+        style="display:none;"
+    >
+
+        <h2>
+            Loan Result
+        </h2>
+
+
+        <!-- ELIGIBILITY STATUS -->
+
+        <div id="eligibilityStatus"></div>
+
+
+
+        <!-- LOAN AMOUNT BREAKDOWN -->
+
+        <div class="amount-breakdown">
+
+
+            <div class="amount-box requested">
+
+                <span>
+                    Required Loan Amount
+                </span>
+
+                <strong id="requiredAmount">
+                    ₹0
+                </strong>
+
+            </div>
+
+
+
+            <div class="percentage-arrow">
+
+                <span>
+                    80%
+                </span>
+
+                <small>
+                    Eligibility
+                </small>
+
+            </div>
+
+
+
+            <div class="amount-box eligible">
+
+                <span>
+                    Eligible Loan Amount
+                </span>
+
+                <strong id="eligibleAmount">
+                    ₹0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- EMI RESULT -->
+
+        <div class="result-grid">
+
+
+            <div class="result-box">
+
+                <span>
+                    Applicable Interest Rate
+                </span>
+
+                <strong id="interestRate">
+                    —
+                </strong>
+
+            </div>
+
+
+
+            <div class="result-box">
+
+                <span>
+                    Monthly EMI
+                </span>
+
+                <strong id="monthlyEMI">
+                    —
+                </strong>
+
+            </div>
+
+
+
+            <div class="result-box">
+
+                <span>
+                    Total Interest
+                </span>
+
+                <strong id="totalInterest">
+                    —
+                </strong>
+
+            </div>
+
+
+
+            <div class="result-box">
+
+                <span>
+                    Total Repayment
+                </span>
+
+                <strong id="totalPayment">
+                    —
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- DETAILS -->
+
+        <div id="resultDetails">
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         AMORTIZATION SCHEDULE
+    ====================================================== -->
+
+    <section
+        class="card"
+        id="scheduleCard"
+        style="display:none;"
+    >
+
+        <h2>
+
+            Repayment Schedule
+
+        </h2>
+
+
+        <div class="table-container">
+
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Month
+                        </th>
+
+                        <th>
+                            Opening Balance
+                        </th>
+
+                        <th>
+                            EMI
+                        </th>
+
+                        <th>
+                            Principal
+                        </th>
+
+                        <th>
+                            Interest
+                        </th>
+
+                        <th>
+                            Closing Balance
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="scheduleBody">
+
+                </tbody>
+
+
+            </table>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CIBIL RATE TABLE
+    ====================================================== -->
+
+    <section class="card">
+
+        <h2>
+
+            CIBIL Based Interest Rate
+
+        </h2>
+
+
+        <div class="table-container">
+
+            <table class="rate-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            CIBIL Score
+                        </th>
+
+                        <th>
+                            Rate of Interest
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                    <tr>
+
+                        <td>
+                            825 and above
+                        </td>
+
+                        <td>
+                            7.45%
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            800 – 824
+                        </td>
+
+                        <td>
+                            7.65%
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            750 – 799
+                        </td>
+
+                        <td>
+                            7.75%
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            726 – 749
+                        </td>
+
+                        <td>
+                            8.00%
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            700 – 725
+                        </td>
+
+                        <td>
+                            8.30%
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            650 – 699
+                        </td>
+
+                        <td>
+                            9.05%
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            0 / 1 or below 300
+                        </td>
+
+                        <td>
+                            8.15%
+                        </td>
+
+                    </tr>
+
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        <div class="warning">
+
+            CIBIL ranges for which no rate is specified
+            in the supplied product information are not
+            automatically assigned a rate.
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PRODUCT FEATURES
+    ====================================================== -->
+
+    <section class="card features">
+
+        <h2>
+            Product Highlights
+        </h2>
+
+
+        <div class="feature-grid">
+
+
+            <div>
+
+                <strong>
+                    Maximum Tenure
+                </strong>
+
+                <span>
+                    84 Months
+                </span>
+
+            </div>
+
+
+            <div>
+
+                <strong>
+                    EV Concession
+                </strong>
+
+                <span>
+                    0.10%
+                </span>
+
+            </div>
+
+
+            <div>
+
+                <strong>
+                    Digital Application
+                </strong>
+
+                <span>
+                    100% waiver of processing &
+                    documentation charges
+                </span>
+
+            </div>
+
+
+            <div>
+
+                <strong>
+                    Pay Out
+                </strong>
+
+                <span>
+                    2% including GST
+                </span>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+        <strong>
+            UCO BANK
+        </strong>
+
+
+        <p>
+            Car Loan EMI Calculator
+        </p>
+
+
+        <small>
+
+            Indicative calculation only.
+            Verify the current applicable product
+            terms, rates and eligibility norms
+            before relying on the result.
+
+        </small>
+
+    </footer>
+
+
+</div>
+
+
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html> 
